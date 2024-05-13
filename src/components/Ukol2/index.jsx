@@ -19,6 +19,10 @@ import './style.css';
 
 export const Ukol2 = () => {
   const [amount, setAmount] = useState(0);
+
+  const handleCoinClick = (coinValue) => {
+    setAmount(amount + coinValue)
+  }
   
   return (
     <>
@@ -26,12 +30,24 @@ export const Ukol2 = () => {
         <strong>Částka: {amount} Kč</strong>
       </p>
       <div className="button-group">
-        <CoinButton value={1} />
-        <CoinButton value={2} />
-        <CoinButton value={5} />
-        <CoinButton value={10} />
-        <CoinButton value={20} />
-        <CoinButton value={50} />
+        <CoinButton 
+        onCoinClick={() => handleCoinClick(1)} 
+        value={1} />
+        <CoinButton 
+        onCoinClick={() => handleCoinClick(2)} 
+        value={2} />
+        <CoinButton 
+        onCoinClick={() => handleCoinClick(5)}
+        value={5} />
+        <CoinButton 
+        onCoinClick={() => handleCoinClick(10)} 
+        value={10} />
+        <CoinButton 
+        onCoinClick={() => handleCoinClick(20)} 
+        value={20} />
+        <CoinButton 
+        onCoinClick={() => handleCoinClick(50)}
+        value={50} />
       </div>
     </>
   );
